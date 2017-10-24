@@ -1,10 +1,10 @@
 // Dependencies
 // =============================================================
-const express = require("express"),
+const express    = require("express"),
       bodyParser = require("body-parser"),
-      path = require("path"),
-      request = require('request'),
-      exphbs = require('express-handlebars');
+      path       = require("path"),
+      request    = require('request'),
+      exphbs     = require('express-handlebars');
 // Sets up the Express App
 // =============================================================
 const app = express(),
