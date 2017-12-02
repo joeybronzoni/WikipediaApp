@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use("/assets", express.static(path.join(__dirname + '/assets')));
+app.use("/javascript", express.static(path.join(__dirname + '/javascript')));
 
 
 
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 //Routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
+//  res.render(path.join(__dirname, "index"));
 });
 
 
