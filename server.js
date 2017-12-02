@@ -20,13 +20,13 @@ app.use("/javascript", express.static(path.join(__dirname + '/javascript')));
 
 
 
-//Handlebars
-app.engine('handlebars', exphbs({defaultLayout:'main'}));
-app.set('view engine', 'handlebars');
+// //Handlebars
+// app.engine('handlebars', exphbs({defaultLayout:'main'}));
+// app.set('view engine', 'handlebars');
 
-//Body Parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+// //Body Parser
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended:false}));
 
 
 //Routes
@@ -37,8 +37,9 @@ app.get('/', (req, res) => {
 
 
 //Starting server
+//notice that there are two different port variables-PORT or port
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => {
-  console.log(`====🌎 🚈 🖥️ 📡===> App listening on PORT ${port} ✅`);
+app.listen(PORT, () => {
+  console.log(`====🌎 🚈 🖥️ 📡===> App listening on PORT ${PORT} ✅`);
 });
