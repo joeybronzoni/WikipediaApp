@@ -1,10 +1,27 @@
 $(document).ready(function() {
   console.log("ready!");
-
+  var data = {};
   $("#searchButton").on("click", function(){
     var searchTerm = $("#searchTerm").val();
     var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+searchTerm+"&format=json&callback=?";
     $.ajax({
+      url: url,
+      method: "GET",
+      dataType: "jsonp",
+    }).done((res, err) => {
+      console.log(res);
+      data.res = JSON.stringify(res);
+    }).fail((jqXHR, textStatus, errorThrown) => {
+	     console.log(jqXHR.status);
+	     console.log(textStatus);
+	     console.log(errorThrown);
+    }
+	   );
+    
+  });
+  
+});
+/*$.ajax({
       url: url,
       type: "GET",
       contentType: "application/json; charset=utf-8",
@@ -23,8 +40,4 @@ $(document).ready(function() {
       .always(function(){
 	console.log("Complete");
       });
-
-
-  });
-  
-});
+*/
