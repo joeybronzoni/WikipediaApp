@@ -15,8 +15,9 @@ $(document).ready(function() {
 	     console.log(jqXHR.status);
 	     console.log(textStatus);
 	     console.log(errorThrown);
-    }
-	   );
+    }).always(() => {
+      console.log("Complete");
+    });
     
   });
   
