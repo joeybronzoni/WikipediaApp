@@ -10,6 +10,7 @@ $(document).ready(function() {
       dataType: "jsonp",
     }).done((res, err) => {
       console.log(res);
+      console.log("res[1]",res[1]);
       data.res = JSON.stringify(res);
     }).fail((jqXHR, textStatus, errorThrown) => {
 	     console.log(jqXHR.status);
