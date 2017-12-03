@@ -7,6 +7,7 @@ $(document).ready(function() {
     $.ajax({
       url: url,
       method: "GET",
+      async: false,
       dataType: "jsonp",
     }).done((res, err) => {
       // console.log(res);
@@ -14,9 +15,15 @@ $(document).ready(function() {
       // console.log("res[2][0]",res[2][0]);
       // console.log("res[3][0]",res[3][0]);
       for(var i = 0; i < res[1].length; i++) {
-	console.log(i);
+	      $("#output").prepend(res[1][0]);
       }
-        $("#response").html("<div id='newDiv'>" + "<h1>" + res[1][0] + "</h1>" + "<h2>" + res[2][0] + "</h2>" + "<p>" + res[3][0] + "</p>" + "</div>");
+      $("#response").html("<div id='newDiv'>" +
+			  "<h1><a href=' " + res[3][0]+ "'>"+
+			  res[1][0] +
+			  "</a></h1>"+
+			  "<h2>" + res[2][0] + "</h2>" +  "</div>");
+			  
+      //$("#response").html("<div id='newDiv'>" + "<h1><a href=' " + res[3][0]+ "'</a>" + res[1][0] + "</h1>" + "<h2>" + res[2][0] + "</h2>" +  "</div>");
       
       data.res = JSON.stringify(res);
     }).fail((jqXHR, textStatus, errorThrown) => {
