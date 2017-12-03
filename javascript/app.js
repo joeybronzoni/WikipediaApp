@@ -9,12 +9,15 @@ $(document).ready(function() {
       method: "GET",
       dataType: "jsonp",
     }).done((res, err) => {
-      console.log(res);
-      console.log("res[1][0a]",res[1][0]);
-      console.log("res[2][0]",res[2][0]);
-      console.log("res[3][0]",res[3][0]);
+      // console.log(res);
+      // console.log("res[1][0a]",res[1][0]);
+      // console.log("res[2][0]",res[2][0]);
+      // console.log("res[3][0]",res[3][0]);
+      for(var i = 0; i < res[1].length; i++) {
+	console.log(i);
+      }
         $("#response").html("<div id='newDiv'>" + "<h1>" + res[1][0] + "</h1>" + "<h2>" + res[2][0] + "</h2>" + "<p>" + res[3][0] + "</p>" + "</div>");
-      //$("#response").(res[1[0]]);
+      
       data.res = JSON.stringify(res);
     }).fail((jqXHR, textStatus, errorThrown) => {
 	     console.log(jqXHR.status);
